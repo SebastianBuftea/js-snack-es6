@@ -86,10 +86,22 @@ function randomNumber(){
     let numerorandom= Math.floor(Math.random()*100 + 1)
 return numerorandom;
 }
-
-
- squadre.forEach((elem)=>{
+let newArray=[]
+//creo un ciclo al quale interno sostituiro alle chiavi punti fatti e falli subiri un numero random
+ squadre.forEach((elem, index, array)=>{
+console.log(elem)
    elem.puntifatti=randomNumber();
    elem.fallisubiti=randomNumber();
+// grazie alla destrutturazione pushamo nel arrai la squadra coni relativi falli subiti
+   let {nome, fallisubiti}= elem;
+
+   //mi creo il nuovo oggetto contenente i soli due valori richiesti e li pusho in un array
+   let obj={
+    nome,
+    fallisubiti
+   }
+   newArray.push(obj);    
 })
-console.log(squadre) 
+
+console.log(newArray)
+
