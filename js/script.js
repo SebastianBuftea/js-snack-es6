@@ -105,3 +105,48 @@ console.log(elem)
 
 console.log(newArray)
 
+//snack 3
+
+let articoli=[
+    {
+        name:"Poppy",                
+        type:"tshirt",
+        color:" red"
+    },
+    {
+        name:"Jumping",
+        type:"occhiali",
+        color:"blue"
+    }, 
+    {
+        name:"CrissCros",
+        type:"scarpe",
+        color:"black"
+
+    },
+    {
+        name:"Jenny",
+        type:"borsa",
+        color:"pink"
+    }
+
+]
+
+// creao una funzione generatrice di una lettera casuale
+
+function randomLetter(){
+    let alfabeto="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    let array=[...alfabeto] 
+    let numerorandom= Math.floor(Math.random()*alfabeto.length)
+    return array[numerorandom]
+}
+
+// creao un ciclo al cui interno creero un nuovo oggetto affidandogli le proprieta del vecchio oggetto con l aggiunta della posizione
+let newArrayArticoli=[]
+articoli.forEach((elem) => {
+     obj={...elem, position:randomLetter() }
+    newArrayArticoli.push(obj)     
+});
+
+console.log(newArrayArticoli)
+console.log(articoli)
